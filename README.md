@@ -16,3 +16,9 @@ $ gem install itunes_information_slack
 * SLACK_API_TOKEN (webhook integrationを参照してください)
 * SLACK_TEAM
 * SLACK_CHANNEL (option)
+
+以下のコマンドで送信することができます。
+
+```
+$ itunes_information_slack
+```
