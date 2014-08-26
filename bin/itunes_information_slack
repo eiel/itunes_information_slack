@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'itunes-client'
+require 'slack-notify'
+
+track = Itunes::Player.current_track
+
+body = "再生中の曲は #{track.name} です。#{track.album} : #{track.artist}"
+
+team = ENV["SLACK_TEAM"]
+token = ENV["SLACK_API_TOKEN"]
+channel = ENV["SLACK_CHANNEL"] || "#random"
+
+client = SlackNotify::Client.new(team, token,
+  channel: channel,
+  username: "iTunes",
+  icon_url: "https://raw.githubusercontent.com/eiel/itunes_information_slack/images/itunes.png"
+)
+
+client.notify body
