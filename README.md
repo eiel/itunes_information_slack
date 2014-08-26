@@ -5,7 +5,7 @@ slack に再生中の曲を送信する
 # インストール
 
 ```
-gem install
+$ gem install itunes_information_slack
 ```
 
 # 使い方
